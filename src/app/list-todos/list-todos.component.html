@@ -1,0 +1,19 @@
+<table border="1">
+  <caption>Moja Lista:</caption>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Opis</th>
+      <th>Zrobione</th>
+      <th>Docelowy czas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos">
+      <td>{{todo.id}}</td>
+      <td>{{todo.description}}</td>
+      <td>{{todo.isDone}}</td>
+      <td>{{todo.targetDate | date}}</td>
+    </tr>
+  </tbody>
+</table>

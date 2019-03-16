@@ -8,8 +8,8 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  username: string = "Marcc";
-  password: string = "";
+  username: string = "Marczu";
+  password: string = "mojehasło";
   errorMessage: string = "Nieprawidłowe dane";
   invalidLogin: boolean = false;
 
