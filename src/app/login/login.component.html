@@ -1,8 +1,17 @@
-<small *ngIf="invalidLogin">{{errorMessage}}</small>
+<div class="container">
+  <h1>Logowanie:</h1>
+  <form>
+    <div class="form-group">
+      <label for="username">Nazwa użytkownika</label>
+      <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp" placeholder="Wprowadź nazwe uzytkownika" [(ngModel)]="username">
 
-<div>
-  Nazwa użytkownika : <input type="text" name="username" [(ngModel)]="username">
-  Hasło : <input type="password" name="password" [(ngModel)]="password">
+    </div>
+    <div class="form-group">
+      <label for="password">Hasło</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Wspowadź hasło" [(ngModel)]="password">
+    </div>
+    <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMessage}}</div>
+    <button type="submit" class="btn btn-primary" (click)="handleLogin()">Zaloguj</button>
+  </form>
 
-  <button (click)="handleLogin()">Login</button>
 </div>

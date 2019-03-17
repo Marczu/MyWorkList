@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
 
   username: string = "Marczu";
   password: string = "mojehasło";
-  errorMessage: string = "Nieprawidłowe dane";
+  errorMessage: string = "Nieprawidłowa nazwa użytkownika lub hasło";
   invalidLogin: boolean = false;
 
   constructor(private router: Router) { }
