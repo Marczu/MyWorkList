@@ -3,4 +3,13 @@
   <div>
     <a routerLink="/todos">Tutaj</a> możesz zarządzać swoją listą zadań.
   </div>
+
+
+  <div>
+    Kliknij:
+    <button (click)="getWelcomeMessageWithParam()" class="btn btn-success">Wiadomość</button>
+  </div>
+  <div>
+    <h2>{{welcomeMessageFromService}}</h2>
+  </div>
 </div>
