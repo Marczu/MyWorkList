@@ -1,6 +1,8 @@
-<h1>Moja Lista Zadań</h1>
+<h1 class="display-1">Moja Lista Zadań</h1>
+
 
 <div class="container">
+  <div class="alert alert-success" *ngIf="message">{{message}}</div>
   <table class="table">
     <thead>
     <tr>
@@ -8,6 +10,8 @@
       <th>Opis</th>
       <th>Zrobione</th>
       <th>Docelowy czas</th>
+      <th>Usuwanie</th>
+      <th>Edycja</th>
     </tr>
     </thead>
     <tbody>
@@ -16,6 +20,12 @@
       <td>{{todo.description}}</td>
       <td>{{todo.done}}</td>
       <td>{{todo.targetDate | date}}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteTodo(todo.id)">Usuń</button>
+      </td>
+      <td>
+        <button class=" btn btn-info" (click)="editTodo(todo.id)">Edytuj</button>
+      </td>
     </tr>
     </tbody>
   </table>
