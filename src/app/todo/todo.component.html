@@ -1,0 +1,24 @@
+<div class="container">
+
+  <h1 class="display-3">Zadanie:</h1>
+
+  <fieldset class="form-group">
+    <label>Opis</label>
+    <input class="form-control"
+           [(ngModel)]="todo.description"
+           type="text"
+           name="description"
+           required="required">
+  </fieldset>
+  <fieldset class="form-group">
+    <label>Docelowy czas</label>
+    <input class="form-control"
+           [ngModel]="todo.targetDate | date:'yyyy-MM-dd'"
+           (ngModelChange)="todo.targetDate = $event"
+           type="date" name="targetDate"
+           required="required">
+  </fieldset>
+
+  <button class="btn btn-success" (click)="saveTodo()">Zapisz</button>
+
+</div>
