@@ -4,7 +4,7 @@
 
   <fieldset class="form-group">
     <label>Opis</label>
-    <input class="form-control"
+    <input class="form-control w-50"
            [(ngModel)]="todo.description"
            type="text"
            name="description"
@@ -12,13 +12,13 @@
   </fieldset>
   <fieldset class="form-group">
     <label>Docelowy czas</label>
-    <input class="form-control"
+    <input class="form-control w-25"
            [ngModel]="todo.targetDate | date:'yyyy-MM-dd'"
            (ngModelChange)="todo.targetDate = $event"
            type="date" name="targetDate"
            required="required">
   </fieldset>
 
-  <button class="btn btn-success" (click)="saveTodo()">Zapisz</button>
+  <button class="btn btn-success" (click)="saveTodo(todo.id, todo)">Zapisz</button>
 
 </div>
