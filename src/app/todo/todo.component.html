@@ -1,24 +1,31 @@
 <div class="container">
 
   <h1 class="display-3">Zadanie:</h1>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && todoForm.invalid">Wprowadz prawidłowe dane</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && targetDate.invalid">Wprowadz prawidłową date</div>
+  <div class="alert alert-warning" *ngIf="todoForm.dirty && targetDescription.invalid">Opis musi mieć minimum 5 znaków</div>
+  <form (ngSubmit)="!todoForm.invalid && saveTodo(todo.id, todo)" #todoForm="ngForm">
+    <fieldset class="form-group">
+      <label>Opis</label>
+      <input class="form-control w-50"
+             #targetDescription="ngModel"
+             [(ngModel)]="todo.description"
+             type="text"
+             name="description"
+             required="required"
+             minlength="5"
+      >
+    </fieldset>
+    <fieldset class="form-group">
+      <label>Docelowy czas</label>
+      <input class="form-control w-25"
+             #targetDate="ngModel"
+             [ngModel]="todo.targetDate | date:'yyyy-MM-dd'"
+             (ngModelChange)="todo.targetDate = $event"
+             type="date" name="targetDate"
+             required="required">
+    </fieldset>
 
-  <fieldset class="form-group">
-    <label>Opis</label>
-    <input class="form-control w-50"
-           [(ngModel)]="todo.description"
-           type="text"
-           name="description"
-           required="required">
-  </fieldset>
-  <fieldset class="form-group">
-    <label>Docelowy czas</label>
-    <input class="form-control w-25"
-           [ngModel]="todo.targetDate | date:'yyyy-MM-dd'"
-           (ngModelChange)="todo.targetDate = $event"
-           type="date" name="targetDate"
-           required="required">
-  </fieldset>
-
-  <button class="btn btn-success" (click)="saveTodo(todo.id, todo)">Zapisz</button>
-
+    <button type="submit" class="btn btn-success">Zapisz</button>
+  </form>
 </div>
