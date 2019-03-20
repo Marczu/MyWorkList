@@ -43,4 +43,5 @@ export class WelcomeComponent implements OnInit {
     this.welcomeMessageFromService = error.error.message
   }
 
+
 }
