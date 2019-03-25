@@ -35,22 +35,13 @@ export class BasicAuthenticationService {
     );
   }
 
-
-  autenticate(username: string, password: string) {
-    if (username === 'Marczu' && password === 'mojehasło') {
-      sessionStorage.setItem('authenticatedUser', username);
-      return true;
-    }
-    return false;
-  }
-
   getAuthenticatedUser() {
     return sessionStorage.getItem('authenticatedUser');;
   }
 
   getAuthenticatedToken() {
     if(this.getAuthenticatedUser()){
-      return sessionStorage.getItem('authToken');;
+      return sessionStorage.getItem('authToken');
     }
   }
 

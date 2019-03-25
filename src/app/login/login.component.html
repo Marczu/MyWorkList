@@ -10,7 +10,7 @@
       <label for="password">Hasło</label>
       <input type="password" class="form-control" id="password" name="password" placeholder="Wspowadź hasło" [(ngModel)]="password">
     </div>
-    <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMessage}}</div>
+    <div class="alert alert-danger small" *ngIf="invalidLogin">{{errorMessage}}</div>
     <button type="submit" class="btn btn-primary" (click)="handleBasicAuthLogin()">Zaloguj</button>
   </form>
 

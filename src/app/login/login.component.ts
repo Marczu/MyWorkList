@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {HardcodedAuthenticationService} from '../service/hardcoded-authentication.service';
-import {BasicAuthenticationService} from '../service/authentication.service';
+import {BasicAuthenticationService} from '../service/basic-authentication.service';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +10,8 @@ import {BasicAuthenticationService} from '../service/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  username: string = 'Marczu';
-  password: string = 'mojehasło';
+  username: string = '';
+  password: string = '';
   errorMessage: string = 'Nieprawidłowa nazwa użytkownika lub hasło';
   invalidLogin: boolean = false;
 
